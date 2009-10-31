@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091031115621) do
+ActiveRecord::Schema.define(:version => 20091031120522) do
 
   create_table "app_depends_ons", :force => true do |t|
     t.integer  "app_id"
@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(:version => 20091031115621) do
   end
 
   create_table "depends_ons", :force => true do |t|
-    t.integer  "package_id"
     t.integer  "version_id"
+    t.integer  "package_id"
+    t.integer  "package_version_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
