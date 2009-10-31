@@ -1,0 +1,29 @@
+h1 {
+	margin-top: 1em;
+	font: 4em "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+body {
+	background: url(../images/bg_gradient.png) repeat-x;
+}
+
+.container {
+	margin-top: 2em;
+}
+
+.back {
+	background: url(../images/bg_gradient.png) repeat-x 0 -100px;
+	border-radius: 10px; 
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+	padding: 10px;
+}
+
+.footer {
+	font-size: .8em;
+	border-top: 1px solid grey;
+	padding-top: 1em;
+}
+.tmp {
+	background-color: #eee;
+}
