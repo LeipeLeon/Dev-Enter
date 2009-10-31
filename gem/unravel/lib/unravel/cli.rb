@@ -1,5 +1,7 @@
 require 'optparse'
 
+require 'extractor'
+
 module Unravel
   class CLI
     def self.execute(stdout, arguments=[])
@@ -32,11 +34,12 @@ module Unravel
           stdout.puts opts; exit
         end
       end
-
+      
+      options.merge!(:env => ENV["RAILS_ENV"] || 'production')
+      
       path = options[:path]
 
-      # do stuff
-      stdout.puts "To update this executable, look in lib/unravel/cli.rb"
+      GemExtractor.new(options).run
     end
   end
 end
