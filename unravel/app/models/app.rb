@@ -9,12 +9,12 @@ class App < ActiveRecord::Base
       if row[:package]
         parse_package(row[:package])
       end
-      puts "\n\n\n\n\n"
     end
   end
 
 private
   def parse_package(package, parent_id = nil)
+    puts "#{package[:name]}:#{parent_id}"
     dependent = AppDependsOn.find_or_create_by_app_id_and_package_name_and_package_type(self.id, package[:name], package[:type] )
     dependent.update_attributes(
         :version => package[:version], 
@@ -24,7 +24,7 @@ private
     
     unless package[:dependencies].blank?
       package[:dependencies].each do |dependency|
-        parse_package(dependency[:package], package.id)
+        parse_package(dependency[:package], dependent.id)
       end
     end
   end
