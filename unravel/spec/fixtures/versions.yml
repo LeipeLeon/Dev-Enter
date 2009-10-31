@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  dependency_id: 1
+  version: MyString
+  version_mayor: 1
+  version_minor: 1
+  version_bug: 1
+  url: MyString
+
+two:
+  dependency_id: 1
+  version: MyString
+  version_mayor: 1
+  version_minor: 1
+  version_bug: 1
+  url: MyString

@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  app_id: 1
+  dependency_id: 1
+
+two:
+  app_id: 1
+  dependency_id: 1
