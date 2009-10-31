@@ -58,8 +58,10 @@ module Unravel
 
           # write .unravel file ready for upload to webservice
           File.open(DEPS_FILE, 'w') { |f|
-            f.write "#{appname}\n"
-            f.write packages.to_yaml
+            f.write({
+              :appname => appname,
+              :packages => packages
+            }.to_yaml)
           }
 
         else
