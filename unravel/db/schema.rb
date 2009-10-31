@@ -9,14 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091031120522) do
+ActiveRecord::Schema.define(:version => 20091031140817) do
 
   create_table "app_depends_ons", :force => true do |t|
     t.integer  "app_id"
-    t.integer  "dependency_id"
+    t.integer  "package_id"
     t.string   "version"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "package_name"
+    t.integer  "parent_id"
+    t.string   "package_type"
   end
 
   create_table "apps", :force => true do |t|
@@ -59,9 +62,15 @@ ActiveRecord::Schema.define(:version => 20091031120522) do
 
   create_table "packages", :force => true do |t|
     t.string   "name"
-    t.string   "url"
+    t.string   "homepage"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "package_type"
+    t.string   "summary"
+    t.string   "lib"
+    t.text     "description"
+    t.string   "platform"
+    t.string   "column_name"
   end
 
   create_table "roles", :force => true do |t|
