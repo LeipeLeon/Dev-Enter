@@ -1,5 +1,5 @@
 class AppsController < ApplicationController
-  before_filter :login_required
+  # before_filter :login_required
   # GET /apps
   # GET /apps.xml
   def index
