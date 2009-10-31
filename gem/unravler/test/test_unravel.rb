@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/test_helper.rb'
 
-class TestUnravel < Test::Unit::TestCase
+class TestUnravler < Test::Unit::TestCase
 
   def setup
   end
