@@ -1,18 +1,16 @@
-<p>
-  <b>User:</b>
-  <%=h @app.user_id %>
-</p>
+<h2> Dependency List for application <b><%=h @app.app_name %></b></h2>
 
-<p>
-  <b>App name:</b>
-  <%=h @app.app_name %>
-</p>
-
-<p>
+<!-- <p>
   <b>Api key:</b>
   <%=h @app.api_key %>
 </p>
+ -->
 
+<!-- <%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %> -->
 
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
+<ul>
+<% for package in @app.depends_on %>
+<%= render :partial => package %>
+<% end %>
+</ul>

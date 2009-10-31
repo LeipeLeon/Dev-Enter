@@ -1,2 +1,63 @@
-<h2>Welcome to Your Application!</h2>
-<%= yield %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Home - /Dev↵</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Leon Berenschot">
+	<%= javascript_include_tag :all, :cache => true %>
+	<%= stylesheet_link_tag :all, :cache => true %>
+	<!-- Date: 2009-10-14 -->
+</head>
+<body>
+<div class="container">
+	<div class="span-14 last">
+		<h1>/Dev↵</h1>
+	</div>
+	<div class="span-10 last">
+		<%= image_tag 'logo_gradient.png' %>
+	</div>
+	
+	<div class="back span-17">
+		<%= yield %>
+	</div>
+	<!-- <div class="back span-6 last">
+		<h3>Content block 2</h3>
+		<ul>
+			<li><a href="">Link 1</a></li>
+			<li><a href="">Link 1</a></li>
+			<li><a href="">Link 1</a></li>
+		</ul>
+	</div> -->
+	<div id="twtr-profile-widget" class="span-6"></div>
+	
+	<div class="footer span-24 last">
+		Dev-Enter is een samenwerking van KDGM® en Wendbaar.nl®
+	</div>
+</div>
+<script src="http://widgets.twimg.com/j/1/widget.js"></script>
+<link href="http://widgets.twimg.com/j/1/widget.css" type="text/css" rel="stylesheet">
+<script>
+new TWTR.Widget({
+  profile: true,
+  id: 'twtr-profile-widget',
+  loop: false,
+  width: 250,
+  height: 300,
+  theme: {
+    shell: {
+      background: '#eee',
+      color: '#000000'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#444444',
+      links: '#1985b5'
+    }
+  }
+}).render().setProfile('slash_dev_enter').start();
+</script>
+</body>
+</html>
