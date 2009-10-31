@@ -21,8 +21,6 @@ module Unravler
           Usage:
             #{File.basename($0)} create yourappname # register your app name
             #{File.basename($0)} push               # push your app dependencies to unravler.com
-
-          Options are:
         BANNER
         opts.separator ""
         opts.on("-p", "--print",
@@ -62,19 +60,29 @@ module Unravler
           File.open(APPNAME_FILE, 'w') { |f| f.write appname }
 
         when 'push'
-          appname = File.read(APPNAME_FILE).strip
-          packages = \
-            FullExtractor.new(options).run
+          
+          if File.exist?(APPNAME_FILE)
+          
+            appname = File.read(APPNAME_FILE).strip
+            packages = \
+              FullExtractor.new(options).run
 
-          # write .unravler file ready for upload to webservice
-          File.open(DEPS_FILE, 'w') { |f|
-            f.write({
-              :appname => appname,
-              :packages => packages
-            }.to_yaml)
-          }
+            # write .unravler file ready for upload to webservice
+            File.open(DEPS_FILE, 'w') { |f|
+              f.write({
+                :appname => appname,
+                :packages => packages
+              }.to_yaml)
+            }
         
-          puts "Pushed dependencies for #{appname} to unravler.com"
+            puts "Pushed dependencies for #{appname} to unravler.com"
+          else
+            puts <<-PLEASE_CREATE.gsub(/^          /,'')
+              Your application has not yet been created on unravler.com..
+              
+              Please run '#{File.basename($0)} create yourappname'
+            PLEASE_CREATE
+          end
         end
       end
 
