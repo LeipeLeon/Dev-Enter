@@ -1,4 +1,4 @@
 === 0.0.1 2009-10-31
 
 * 1 major enhancement:
-  * Initial release of unravel gem
+  * Initial release of unravler gem

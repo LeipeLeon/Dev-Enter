@@ -2,10 +2,10 @@ require 'optparse'
 
 require 'extractor'
 
-module Unravel
+module Unravler
 
-  APPNAME_FILE = ".unravel_appname"
-  DEPS_FILE    = ".unravel"
+  APPNAME_FILE = ".unravler_appname"
+  DEPS_FILE    = ".unravler"
   
   class CLI
     def self.execute(stdout, arguments=[])
@@ -19,11 +19,11 @@ module Unravel
 
       parser = OptionParser.new do |opts|
         opts.banner = <<-BANNER.gsub(/^          /,'')
-          Unravel your Rails application dependencies...
+          Unravler your Rails application dependencies...
 
           Usage:
             #{File.basename($0)} create yourappname # register your app name
-            #{File.basename($0)} push               # push your app dependencies to unravel.com
+            #{File.basename($0)} push               # push your app dependencies to unravler.com
 
           Options are:
         BANNER
@@ -56,7 +56,7 @@ module Unravel
           packages += ScmExtractor.new(options).run
           packages += PluginExtractor.new(options).run
 
-          # write .unravel file ready for upload to webservice
+          # write .unravler file ready for upload to webservice
           File.open(DEPS_FILE, 'w') { |f|
             f.write({
               :appname => appname,

@@ -1,9 +1,9 @@
 require File.join(File.dirname(__FILE__), "test_helper.rb")
-require 'unravel/cli'
+require 'unravler/cli'
 
-class TestUnravelCli < Test::Unit::TestCase
+class TestUnravlerCli < Test::Unit::TestCase
   def setup
-    Unravel::CLI.execute(@stdout_io = StringIO.new, [])
+    Unravler::CLI.execute(@stdout_io = StringIO.new, [])
     @stdout_io.rewind
     @stdout = @stdout_io.read
   end

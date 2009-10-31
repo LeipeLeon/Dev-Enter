@@ -1,5 +1,5 @@
 
-module Unravel
+module Unravler
   
   class Extractor
     def initialize(options = {})
@@ -59,7 +59,7 @@ module Unravel
       # puts gems.to_yaml
 
       packages = Rails.configuration.gems.map do |gem|
-        unravel(gem)
+        unravler(gem)
       end
 
       packages
@@ -70,7 +70,7 @@ module Unravel
     #
     # recursively extract useful attributes from the gems
     #
-    def unravel(gem, level=1)
+    def unravler(gem, level=1)
       spec = gem.specification
       {
         :package => {
@@ -86,7 +86,7 @@ module Unravel
           :rubyforge_project => spec.rubyforge_project,
           :summary           => spec.summary,
           :required_ruby_version => spec.required_ruby_version.to_s,
-          :dependencies => gem.dependencies.map { |g| unravel(g, level+1) },
+          :dependencies => gem.dependencies.map { |g| unravler(g, level+1) },
         }
       }
     end
