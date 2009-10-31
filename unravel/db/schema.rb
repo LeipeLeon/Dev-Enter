@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091031093511) do
+ActiveRecord::Schema.define(:version => 20091031095100) do
+
+  create_table "apps", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "app_name"
+    t.string   "api_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
