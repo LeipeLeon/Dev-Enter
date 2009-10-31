@@ -1,0 +1,12 @@
+<li>
+	<%= app_depends_on.package_type %> &nbsp;
+	<%= app_depends_on.package_name %> &nbsp; 
+	<%= app_depends_on.version %>
+</li>
+<%- if app_depends_on.children && app_depends_on.children.length > 0 -%>
+<ul>
+<%- for child in app_depends_on.children -%>
+	<%= render :partial => child %>
+<%- end -%>
+</ul>
+<%- end -%>
