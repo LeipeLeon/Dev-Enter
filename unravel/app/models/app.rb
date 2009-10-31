@@ -5,10 +5,8 @@ class App < ActiveRecord::Base
   def fill(file)
     result = YAML.load_file(file)
     
-    result.each do |row|
-      if row[:package]
-        parse_package(row[:package])
-      end
+    result[:packages].each  do |package|
+      parse_package(package[:package]) # unless result[:packages].blank?
     end
   end
 
