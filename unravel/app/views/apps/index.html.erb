@@ -1,0 +1,24 @@
+<h1>Listing apps</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>App name</th>
+    <th>Api key</th>
+  </tr>
+
+<% @apps.each do |app| %>
+  <tr>
+    <td><%=h app.user_id %></td>
+    <td><%=h app.app_name %></td>
+    <td><%=h app.api_key %></td>
+    <td><%= link_to 'Show', app %></td>
+    <td><%= link_to 'Edit', edit_app_path(app) %></td>
+    <td><%= link_to 'Destroy', app, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New app', new_app_path %>

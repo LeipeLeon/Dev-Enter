@@ -1,0 +1,23 @@
+<h1>New app</h1>
+
+<% form_for(@app) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :app_name %><br />
+    <%= f.text_field :app_name %>
+  </p>
+  <p>
+    <%= f.label :api_key %><br />
+    <%= f.text_field :api_key %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', apps_path %>

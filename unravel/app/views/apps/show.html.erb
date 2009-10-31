@@ -1,0 +1,18 @@
+<p>
+  <b>User:</b>
+  <%=h @app.user_id %>
+</p>
+
+<p>
+  <b>App name:</b>
+  <%=h @app.app_name %>
+</p>
+
+<p>
+  <b>Api key:</b>
+  <%=h @app.api_key %>
+</p>
+
+
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>
