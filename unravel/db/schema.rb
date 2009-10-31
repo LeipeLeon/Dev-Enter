@@ -9,12 +9,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091031095100) do
+ActiveRecord::Schema.define(:version => 20091031115621) do
+
+  create_table "app_depends_ons", :force => true do |t|
+    t.integer  "app_id"
+    t.integer  "dependency_id"
+    t.string   "version"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "apps", :force => true do |t|
     t.integer  "user_id"
     t.string   "app_name"
     t.string   "api_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dependencies", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "depends_ons", :force => true do |t|
+    t.integer  "package_id"
+    t.integer  "version_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,6 +54,13 @@ ActiveRecord::Schema.define(:version => 20091031095100) do
     t.integer "timestamp",                  :null => false
     t.string  "server_url"
     t.string  "salt",       :default => "", :null => false
+  end
+
+  create_table "packages", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "roles", :force => true do |t|
@@ -93,5 +122,16 @@ ActiveRecord::Schema.define(:version => 20091031095100) do
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+
+  create_table "versions", :force => true do |t|
+    t.integer  "package_id"
+    t.string   "version"
+    t.integer  "version_mayor"
+    t.integer  "version_minor"
+    t.integer  "version_bug"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
