@@ -26,7 +26,15 @@ module Unravler
     def load_rails
       unless @@rails_loaded
         # load rails to get the gem dependencies
-        require File.join('config', 'environment')
+        begin
+          require File.join('config', 'environment')
+        rescue LoadError
+          puts <<-MSG.gsub(/^          /,'')
+            Couldn\'t find Rails application.
+            Please run #{File.basename($0)} in the Rails.root directory.
+          MSG
+          exit
+        end
         @@rails_loaded = true
       end
     end
