@@ -1,0 +1,15 @@
+
+.DS_Store
+.dotest/*
+coverage/*
+db/*.db
+doc/api
+doc/app
+log/*.log
+log/*.pid
+public/javascripts/all.js
+public/stylesheets/all.js
+tmp/**/*
+tmp/restart.txt
+config/database.yml
+db/*.sqlite3

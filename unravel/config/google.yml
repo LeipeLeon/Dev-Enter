@@ -1,0 +1,6 @@
+production:
+    analytics: ""
+staging: 
+    analytics: ""
+development: 
+    analytics: ""

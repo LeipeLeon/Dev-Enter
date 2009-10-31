@@ -1,0 +1,16 @@
+development:
+    recipients: leonb@beriedata.nl
+    sender: '"Leon Berenschot" <leonb@beriedata.nl>'
+    prefix: "[unravel Devel] "
+test:
+    recipients: leonb@beriedata.nl
+    sender: '"Leon Berenschot" <leonb@beriedata.nl>'
+    prefix: "[unravel Test] "
+staging:
+    recipients: leonb@beriedata.nl
+    sender: '"Leon Berenschot" <leonb@beriedata.nl>'
+    prefix: "[unravel Staging] "
+production:
+    recipients: leonb@beriedata.nl
+    sender: '"Leon Berenschot" <leonb@beriedata.nl>'
+    prefix: "[unravel] "

@@ -1,0 +1,19 @@
+development:
+  host: http://unravel.local
+  sender: Development <leonb@beriedata.nl>
+  subject: "[unravel Devel] "
+
+test:
+  host: http://unravel.local
+  sender: Test <leonb@beriedata.nl>
+  subject: "[unravel Test] "
+
+staging:
+  host: http://office.beriedata.nl/unravel
+  sender: Staging <leonb@beriedata.nl>
+  subject: "[unravel Staging] "
+
+production:
+  host: http://unravel.com
+  sender: unravel <info@unravel.com>
+  subject: "[unravel] "
