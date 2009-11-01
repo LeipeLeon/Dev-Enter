@@ -1,12 +1,22 @@
-<li>
-	<%= app_depends_on.package_type %> &nbsp;
-	<%= app_depends_on.package_name %> &nbsp; 
-	<%= app_depends_on.version %>
-</li>
+<tr>
+	<td><%= image_tag('child.gif') * app_depends_on.ancestors.length %>
+		<%= app_depends_on.package_name %>
+	</td>
+	<td><%= app_depends_on.package_type %></td>
+	<td><%= app_depends_on.version %></td>
+	<td>
+		<% if app_depends_on.package && app_depends_on.package.versions.first %>
+		<span class="<%= 'red' if app_depends_on.package.versions.first.version != app_depends_on.version %>">
+		<%= app_depends_on.package.versions.first.version %>
+		</span>
+		<% else %>
+		-
+		<% end %>
+	</td>
+	<td></td>
+</tr>
 <%- if app_depends_on.children && app_depends_on.children.length > 0 -%>
-<ul>
 <%- for child in app_depends_on.children -%>
 	<%= render :partial => child %>
 <%- end -%>
-</ul>
 <%- end -%>

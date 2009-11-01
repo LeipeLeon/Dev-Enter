@@ -27,3 +27,34 @@ body {
 .tmp {
 	background-color: #eee;
 }
+
+.red {
+	color: red;
+}
+
+.left {
+	float: left;
+	margin-left: 1em;
+}
+
+.right {
+	float: right;
+	margin-right: 1em;
+}
+
+.level_0, .level_1, .level_2, .level_3, .level_4, .level_5 {
+/*	width: 10em;*/
+}
+
+.level_0 { margin-left: 0em;width: 40em;}
+.level_1 { margin-left: 2em;width: 38em;}
+.level_2 { margin-left: 4em;width: 36em;}
+.level_3 { margin-left: 6em;width: 34em;}
+.level_4 { margin-left: 8em;width: 32em;}
+
+div.version span {
+	width: 3em;
+	display: inline-block;
+}
+
+

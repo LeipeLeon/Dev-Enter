@@ -9,19 +9,25 @@
 <!-- <%= link_to 'Edit', edit_app_path(@app) %> |
 <%= link_to 'Back', apps_path %> -->
 <% if  @app.depends_on.length > 0 %>
-<ul>
-<% for package in @app.depends_on %>
-<%= render :partial => package %>
-<% end %>
-</ul>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Curr</th>
+		<th>Latest</th>
+	</tr>
+	<% for package in @app.depends_on %>
+		<%= render :partial => package %>
+	<% end %>
+</table>
 <% else %>
-<h3>No information pushed yet!</h3>
-<pre style="font-size: 300%">
-	<code>
-1. sudo gem install unravler
-2. cd <%= @app.app_name %>
-3. unravler create <%= @app.app_name%>
-4. unravler push
-	</code>
-</pre>
+	<h3>No information pushed yet!</h3>
+	<pre style="font-size: 300%">
+		<code>
+	1. sudo gem install unravler
+	2. cd <%= @app.app_name %>
+	3. unravler create <%= @app.app_name%>
+	4. unravler push
+		</code>
+	</pre>
 <% end %>
