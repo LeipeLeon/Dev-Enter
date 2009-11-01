@@ -3,7 +3,7 @@ require 'json'
 
 class Package < ActiveRecord::Base
   has_many :versions, :order => "version DESC"
-  belongs_to :app_depends_on
+  has_many :app_depends_ons
   # belongs_to :app, :through => :app_depends_on
   # named_scope :version, :order => {:verion => }
   

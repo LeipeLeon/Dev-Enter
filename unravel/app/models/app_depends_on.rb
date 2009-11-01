@@ -1,6 +1,6 @@
 class AppDependsOn < ActiveRecord::Base
   belongs_to :app
-  has_many :packages
+  belongs_to :package
   
   acts_as_tree
   
